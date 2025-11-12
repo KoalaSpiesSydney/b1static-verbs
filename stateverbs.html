@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>B1 Practice – State vs Dynamic Verbs | Modern English Australia</title>
+
+<style>
+:root {
+  --bg:#f5f5f5;
+  --card:#2a2a2a;
+  --ink:#1e1e1e;
+  --muted:#bbbbbb;
+  --accent:#ff7a1a;
+  --line:#3a3a3a;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  line-height:1.6;
+}
+header{
+  background:var(--card);
+  color:var(--accent);
+  text-align:center;
+  padding:1rem;
+  font-size:1.5rem;
+  letter-spacing:1px;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.level-badge{
+  position:absolute;
+  top:12px;
+  right:20px;
+  background:var(--accent);
+  color:white;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:.9rem;
+  font-weight:bold;
+}
+section.intro{
+  max-width:900px;
+  margin:1.5rem auto;
+  background:white;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1.5rem;
+}
+section.intro h2{
+  text-align:center;
+  color:var(--accent);
+}
+section.intro table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:1rem;
+}
+section.intro th, section.intro td{
+  border:1px solid #ddd;
+  padding:.6rem;
+  text-align:left;
+}
+section.intro th{
+  background:var(--accent);
+  color:white;
+}
+main{
+  flex:1;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  padding:1rem;
+  gap:1.5rem;
+}
+.column{
+  flex:1 1 300px;
+  background:white;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1rem;
+  min-height:400px;
+  position:relative;
+}
+.column h2{
+  text-align:center;
+  color:var(--accent);
+  margin-top:0;
+}
+.dropzone{
+  border:2px dashed var(--accent);
+  border-radius:var(--radius);
+  padding:.8rem;
+  text-align:center;
+  color:var(--muted);
+  min-height:200px;
+}
+.verb{
+  background:var(--card);
+  color:white;
+  padding:.6rem 1rem;
+  margin:.4rem;
+  border-radius:var(--radius);
+  cursor:grab;
+  text-align:center;
+  user-select:none;
+  transition:transform .2s, background .3s;
+}
+.verb:active{transform:scale(1.05);}
+.verb.selected{background:var(--accent);}
+#verbs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  padding:10px;
+}
+.feedback{
+  text-align:center;
+  font-size:1.2rem;
+  margin-top:1rem;
+  min-height:2rem;
+}
+button{
+  display:block;
+  margin:1.2rem auto;
+  background:var(--accent);
+  color:white;
+  font-weight:bold;
+  border:none;
+  padding:.8rem 1.6rem;
+  border-radius:var(--radius);
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  transition:background .3s;
+}
+button:hover{background:#ff8f3d;}
+.download{
+  background:#2a2a2a;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  padding:.8rem 1.6rem;
+  border-radius:var(--radius);
+  display:inline-block;
+  margin:2rem auto;
+  box-shadow:var(--shadow);
+  transition:background .3s;
+}
+.download:hover{background:#ff7a1a;}
+footer{
+  text-align:center;
+  padding:1rem;
+  background:var(--card);
+  color:var(--muted);
+  font-size:.9rem;
+}
+@media(max-width:700px){
+  main{flex-direction:column;align-items:stretch;}
+  section.intro table{font-size:.9rem;}
+}
+</style>
+</head>
+
+<body>
+<header>
+  🎯 State vs Dynamic Verbs – Matching Game
+  <div class="level-badge">B1 Level</div>
+</header>
+
+<section class="intro">
+  <h2>Understanding State Verbs</h2>
+  <p><strong>State verbs</strong> describe <b>feelings, thoughts, possession, senses, and existence</b>, not actions.<br>
+  They usually <b>don’t use continuous forms</b> (❌ am knowing, ✅ know).</p>
+
+  <p><b>Examples:</b><br>
+  → I believe you.<br>
+  → She has a car.<br>
+  → This cake tastes amazing.<br>
+  → I love learning English.</p>
+
+  <h3>Part 2 – Common State Verbs</h3>
+  <table>
+    <tr><th>Type</th><th>Verbs</th><th>Example Sentence</th></tr>
+    <tr><td>💭 Thinking / Knowing</td><td>know, believe, understand, think (believe), remember, forget</td><td>I know the answer.</td></tr>
+    <tr><td>💰 Possession</td><td>have, own, belong, include</td><td>This pen belongs to me.</td></tr>
+    <tr><td>❤️ Feelings / Emotions</td><td>like, love, hate, prefer, need, want, wish</td><td>She wants a new phone.</td></tr>
+    <tr><td>👀 Senses</td><td>see, hear, smell, taste, feel</td><td>It smells wonderful.</td></tr>
+    <tr><td>🌈 Appearance / Existence</td><td>be, seem, appear, look (seem), consist</td><td>He seems tired.</td></tr>
+  </table>
+</section>
+
+<main>
+  <section class="column">
+    <h2>🧠 State (Static) Verbs</h2>
+    <div class="dropzone" id="staticZone">Drop or tap here</div>
+  </section>
+  <section class="column">
+    <h2>⚡ Dynamic (Action) Verbs</h2>
+    <div class="dropzone" id="dynamicZone">Drop or tap here</div>
+  </section>
+</main>
+
+<h3 style="text-align:center;">Drag or tap each verb into the correct category 👇</h3>
+<div id="verbs">
+  <div class="verb" draggable="true" data-type="static">know</div>
+  <div class="verb" draggable="true" data-type="dynamic">run</div>
+  <div class="verb" draggable="true" data-type="static">love</div>
+  <div class="verb" draggable="true" data-type="dynamic">jump</div>
+  <div class="verb" draggable="true" data-type="static">believe</div>
+  <div class="verb" draggable="true" data-type="dynamic">write</div>
+  <div class="verb" draggable="true" data-type="static">own</div>
+  <div class="verb" draggable="true" data-type="dynamic">cook</div>
+  <div class="verb" draggable="true" data-type="static">need</div>
+  <div class="verb" draggable="true" data-type="dynamic">swim</div>
+  <div class="verb" draggable="true" data-type="static">belong</div>
+  <div class="verb" draggable="true" data-type="dynamic">talk</div>
+</div>
+
+<div class="feedback" id="feedback"></div>
+<button id="checkBtn">✅ Check Answers</button>
+<button id="resetBtn">🔁 Reset Game</button>
+
+<div style="text-align:center;">
+  <a href="b1stateverbs.pdf" class="download" download>⬇️ Download Worksheet (PDF/Word)</a>
+</div>
+
+<footer>© Koala Spies Sydney · Modern English Australia · “Thanks for being a great student in the CAE class.”</footer>
+
+<script>
+// ----- Drag and Drop + Tap Logic -----
+const verbs=document.querySelectorAll('.verb');
+const staticZone=document.getElementById('staticZone');
+const dynamicZone=document.getElementById('dynamicZone');
+const feedback=document.getElementById('feedback');
+const checkBtn=document.getElementById('checkBtn');
+const resetBtn=document.getElementById('resetBtn');
+let selected=null;
+
+// drag desktop
+verbs.forEach(v=>{
+  v.addEventListener('dragstart',e=>{
+    e.dataTransfer.setData('text/plain',e.target.dataset.type+'|'+e.target.textContent);
+  });
+});
+
+// drop zones
+[staticZone,dynamicZone].forEach(zone=>{
+  zone.addEventListener('dragover',e=>e.preventDefault());
+  zone.addEventListener('drop',e=>{
+    e.preventDefault();
+    const [type,text]=e.dataTransfer.getData('text/plain').split('|');
+    const el=[...verbs].find(v=>v.textContent===text);
+    zone.appendChild(el);
+  });
+});
+
+// tap mobile
+verbs.forEach(v=>{
+  v.addEventListener('click',()=>{
+    if(selected===v){v.classList.remove('selected');selected=null;return;}
+    if(selected)selected.classList.remove('selected');
+    selected=v;v.classList.add('selected');
+  });
+});
+[staticZone,dynamicZone].forEach(zone=>{
+  zone.addEventListener('click',()=>{
+    if(selected){zone.appendChild(selected);selected.classList.remove('selected');selected=null;}
+  });
+});
+
+// check
+checkBtn.addEventListener('click',()=>{
+  let score=0,total=verbs.length;
+  document.querySelectorAll('.dropzone').forEach(zone=>{
+    [...zone.children].forEach(v=>{
+      const correct=(zone.id==='staticZone'&&v.dataset.type==='static')||
+                    (zone.id==='dynamicZone'&&v.dataset.type==='dynamic');
+      if(correct)score++;
+    });
+  });
+  feedback.textContent=`You got ${score} out of ${total} correct!`;
+  feedback.style.color=score===total?'green':'#ff7a1a';
+});
+
+// reset
+resetBtn.addEventListener('click',()=>{
+  feedback.textContent='';
+  document.getElementById('verbs').append(...verbs);
+});
+</script>
+</body>
+</html>
