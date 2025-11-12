@@ -145,19 +145,33 @@ button{
   transition:background .3s;
 }
 button:hover{background:#ff8f3d;}
-.download{
-  background:#2a2a2a;
+
+/* === Unified Navigation Buttons (consistent with C1 page) === */
+.nav-buttons {
+  text-align:center;
+  margin:2rem 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  justify-content:center;
+}
+.nav-buttons a {
+  background:var(--card);
   color:white;
-  text-decoration:none;
   font-weight:bold;
+  text-decoration:none;
   padding:.8rem 1.6rem;
   border-radius:var(--radius);
-  display:inline-block;
-  margin:2rem auto;
   box-shadow:var(--shadow);
-  transition:background .3s;
+  transition:background .3s, transform .2s;
 }
-.download:hover{background:#ff7a1a;}
+.nav-buttons a:hover,
+.nav-buttons a:focus-visible {
+  background:var(--accent);
+  transform:scale(1.05);
+  outline:none;
+}
+
 footer{
   text-align:center;
   padding:1rem;
@@ -231,11 +245,13 @@ footer{
 <button id="checkBtn">✅ Check Answers</button>
 <button id="resetBtn">🔁 Reset Game</button>
 
-<div style="text-align:center;">
-  <a href="b1stateverbs.pdf" class="download" download>⬇️ Download Worksheet (PDF/Word)</a>
+<div class="nav-buttons">
+  <a href="https://ieltspteaustralianexaminertutor.com/">🏠 Home</a>
+  <a href="staticvdynamic.html">📘 Further Practice</a>
+  <a href="b1stateverbs.pdf" download>⬇️ Download Worksheet (PDF/Word)</a>
 </div>
 
-<footer>© Koala Spies Sydney · Modern English Australia · “Thanks for being a great student in the CAE class.”</footer>
+<footer>© Koala Spies Sydney · Modern English Australia.</footer>
 
 <script>
 // ----- Drag and Drop + Tap Logic -----
@@ -301,3 +317,5 @@ resetBtn.addEventListener('click',()=>{
 </script>
 </body>
 </html>
+
+
