@@ -1,150 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>B1 Practice – State vs Dynamic Verbs | Modern English Australia</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>State vs Dynamic Verbs | Modern English Australia</title>
 
-<style>
-:root {
-  --bg:#f5f5f5;
-  --card:#2a2a2a;
-  --ink:#1e1e1e;
-  --muted:#bbbbbb;
-  --accent:#ff7a1a;
-  --line:#3a3a3a;
-  --radius:14px;
-  --shadow:0 6px 24px rgba(0,0,0,.25);
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
-  line-height:1.6;
-}
-header{
-  background:var(--card);
-  color:var(--accent);
-  text-align:center;
-  padding:1rem;
-  font-size:1.5rem;
-  letter-spacing:1px;
-  box-shadow:var(--shadow);
-  position:relative;
-}
-.level-badge{
-  position:absolute;
-  top:12px;
-  right:20px;
-  background:var(--accent);
-  color:white;
-  padding:4px 10px;
-  border-radius:20px;
-  font-size:.9rem;
-  font-weight:bold;
-}
-section.intro{
-  max-width:900px;
-  margin:1.5rem auto;
-  background:white;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1.5rem;
-}
-section.intro h2{
-  text-align:center;
-  color:var(--accent);
-}
-section.intro table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:1rem;
-}
-section.intro th, section.intro td{
-  border:1px solid #ddd;
-  padding:.6rem;
-  text-align:left;
-}
-section.intro th{
-  background:var(--accent);
-  color:white;
-}
-main{
-  flex:1;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:flex-start;
-  padding:1rem;
-  gap:1.5rem;
-}
-.column{
-  flex:1 1 300px;
-  background:white;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1rem;
-  min-height:400px;
-  position:relative;
-}
-.column h2{
-  text-align:center;
-  color:var(--accent);
-  margin-top:0;
-}
-.dropzone{
-  border:2px dashed var(--accent);
-  border-radius:var(--radius);
-  padding:.8rem;
-  text-align:center;
-  color:var(--muted);
-  min-height:200px;
-}
-.verb{
-  background:var(--card);
-  color:white;
-  padding:.6rem 1rem;
-  margin:.4rem;
-  border-radius:var(--radius);
-  cursor:grab;
-  text-align:center;
-  user-select:none;
-  transition:transform .2s, background .3s;
-}
-.verb:active{transform:scale(1.05);}
-.verb.selected{background:var(--accent);}
-#verbs{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  padding:10px;
-}
-.feedback{
-  text-align:center;
-  font-size:1.2rem;
-  margin-top:1rem;
-  min-height:2rem;
-}
-button{
-  display:block;
-  margin:1.2rem auto;
-  background:var(--accent);
-  color:white;
-  font-weight:bold;
-  border:none;
-  padding:.8rem 1.6rem;
-  border-radius:var(--radius);
-  cursor:pointer;
-  box-shadow:var(--shadow);
-  transition:background .3s;
-}
-button:hover{background:#ff8f3d;}
+  <!-- Fonts (yours) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400;600;700&family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f5f5;
+      --ink:#1e1e1e;
+      --muted:#bbbbbb;
+      --accent:#ff7a1a;
+      --line:#3a3a3a;
+      --radius:14px;
+      --shadow:0 6px 24px rgba(0,0,0,.25);
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      min-height:100vh;
+      line-height:1.6;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* ===== MEA / Koala header banner (uses your vars only) ===== */
+    .mea-header{
+      background:black;
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .mea-header .inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .mea-brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .mea-title{
+      font-family:"Libre Franklin", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-weight:800;
+      letter-spacing:.2px;
+      line-height:1.1;
+    }
+    .mea-sub{
+      font-family:"Besley", serif;
+      font-weight:600;
+      color:var(--muted);
+      line-height:1.1;
+    }
+    .mea-nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .mea-nav a{
+      background:rgba(36, 2, 2, 0.1);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      padding:10px 14px;
+      border-radius:12px;
+      opacity: 70%;
+    }
+    .mea-nav a:hover,
+    .mea-nav a:focus-visible{
+      background:var(--accent);
+      outline:none;
+    }
+
+    /* ===== Your intro card (yours) ===== */
+    section.intro{
+      max-width:900px;
+      margin:1.5rem auto;
+      background:white;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:1.5rem;
+    }
+    section.intro h2{
+      text-align:center;
+      color:var(--accent);
+      font-family:"Besley", serif;
+      font-weight:700;
+      margin:.25rem 0 .75rem;
+    }
+
+    /* ===== Pill (from your other version, using your vars only) ===== */
+    .pill{ margin-top:1rem; }
+    .pill-toggle{
+      width:100%;
+      background:black;
+      color:#fff;
+      font-weight:800;
+      border:none;
+      padding:.9rem 1.1rem;
+      border-radius:500px;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      font-size:1rem;
+      font-family:"Libre Franklin", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    .pill-toggle:hover,
+    .pill-toggle:focus-visible{
+      background:var(--accent);
+      outline:none;
+    }
+    .pill-content{ display:none; margin-top:1rem; }
+    .pill-content.open{ display:block; }
+
+    section.intro table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:.5rem;
+    }
+    section.intro th, section.intro td{
+      border:1px solid #ddd;
+      padding:.6rem;
+      text-align:left;
+      vertical-align:top;
+    }
+    section.intro th{
+      background:var(--accent);
+      color:white;
+    }
+
+    /* =========================
+       YOUR GAME (kept as-is)
+       ========================= */
+
+    main{
+      max-width:600px;
+      margin:1.5rem auto 2rem;
+      padding:0 1rem;
+      width:100%;
+    }
+
+    .game-card{
+      background:var(--card);
+      border-radius:10px;
+      padding:1rem;
+      box-shadow:var(--shadow);
+      color:rgb(188, 219, 10);
+      font-family:"Libre Franklin", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .targets{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+      margin-bottom:1rem;
+    }
+
+    .target{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:.9rem;
+      text-align:center;
+      min-height:90px;
+    }
+
+    .target-title{
+      font-weight:800;
+      margin-bottom:.5rem;
+      color:#130101; /* this is required on the dark card */
+    }
+
+    .target-mouth{
+      height:10px;
+      background:rgba(255,255,255,.18);
+      border-radius:999px;
+    }
+
+    .stage{
+      background: white(222, 215, 215, 0.05);
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius:18px;
+      min-height:140px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:1rem;
+    }
+
+    .word{
+      background:rgb(13, 206, 187);
+      color:#111;
+      padding:1rem 1.6rem;
+      border-radius:999px;
+      font-size:1.25rem;
+      font-weight:800;
+      box-shadow:0 12px 30px rgba(0,0,0,.35);
+    }
+
+    .controls{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+      margin-bottom:1rem;
+    }
+
+    /* IMPORTANT: scoped to game-card so your site buttons won't change */
+    .game-card button{
+      border:none;
+      color: rose ;
+      padding:1rem;
+      border-radius:999px;
+      font-weight:800;
+      font-size:1rem;
+      cursor:pointer;
+      font-family:"Libre Franklin", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      box-shadow:0 12px 30px rgba(0,0,0,.35);
+    }
+
+    #btnState{
+     background:rgb(128, 111, 143);
+      color:rgb(18, 1, 1);
+      border-radius: 999px;
+      box-shadow:0 12px 30px rgba(0,0,0,.35);
+    }
+    
+    
+
+    #btnDynamic{
+      background:rgb(211, 163, 212);
+      color:rgb(18, 1, 1);
+      border-radius: 999px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    }
+
+    .game-card button:active{ transform:scale(.97); }
+
+    .hud{
+      display:flex;
+      justify-content:space-between;
+      background: rgb(182, 207, 18) rgba(209, 190, 190, 0.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      padding:.7rem 1rem;
+      margin-bottom:.5rem;
+      color:#220303;
+      font-weight:700;
+    }
+
+    .feedback{
+      text-align:center;
+      min-height:1.5rem;
+      font-weight:700;
+      color:#140101;
+      margin-bottom:.5rem;
+    }
+
+    .reset{
+      text-align:center;
+      
+    }
+    .reset button{
+
+      background:rgba(255,255,255,.12);
+      color:rgb(25, 1, 1);
+    }
+
+    @keyframes flyLeft{
+      to{transform:translate(-140px,-80px) scale(.7);opacity:0}
+    }
+    @keyframes flyRight{
+      to{transform:translate(140px,-80px) scale(.7);opacity:0}
+    }
+    .fly-left{animation:flyLeft .45s ease forwards}
+    .fly-right{animation:flyRight .45s ease forwards}
+
+    @keyframes shake{
+      0%,100%{transform:translateX(0)}
+      25%{transform:translateX(-8px)}
+      50%{transform:translateX(8px)}
+      75%{transform:translateX(-6px)}
+    }
+    .shake{animation:shake .3s}
+
+    .target.glow{
+      border-color:rgba(233, 228, 224, 0.7);
+      box-shadow:0 0 0 4px rgba(255,122,26,.25);
+    }
+
+    /* ===== Footer (uses your vars only) ===== */
+    .ks-footer{
+      margin-top:auto;
+      background:black;
+      color:var(--muted);
+      padding:10px;
+      text-align:center;
+    }
+
+
+
+    @media (max-width:720px){
+      section.intro{ margin:1rem; }
+      main{ margin:1rem auto 1.25rem; }
+    }
+
+    button:hover{background:#ff8f3d;}
 
 /* === Unified Navigation Buttons (consistent with C1 page) === */
 .nav-buttons {
@@ -157,7 +330,7 @@ button:hover{background:#ff8f3d;}
 }
 .nav-buttons a {
   background:var(--card);
-  color:white;
+  color:rgb(30, 2, 2);
   font-weight:bold;
   text-decoration:none;
   padding:.8rem 1.6rem;
@@ -172,152 +345,208 @@ button:hover{background:#ff8f3d;}
   outline:none;
 }
 
-footer{
-  text-align:center;
-  padding:1rem;
-  background:var(--card);
-  color:var(--muted);
-  font-size:.9rem;
-}
-@media(max-width:700px){
-  main{flex-direction:column;align-items:stretch;}
-  section.intro table{font-size:.9rem;}
-}
-</style>
+
+  </style>
 </head>
 
 <body>
-<header>
-  🎯 State vs Dynamic Verbs – Matching Game
-  <div class="level-badge">B1 Level</div>
-</header>
 
-<section class="intro">
-  <h2>Understanding State Verbs</h2>
-  <p><strong>State verbs</strong> describe <b>feelings, thoughts, possession, senses, and existence</b>, not actions.<br>
-  They usually <b>don’t use continuous forms</b> (❌ am knowing, ✅ know).</p>
+  <header class="mea-header">
+    <div class="inner">
+      <div class="mea-brand">
+        <div class="mea-title">Modern English Australia</div>
+        <div class="mea-sub">Koala Spies Sydney</div>
+      </div>
+      <nav class="mea-nav" aria-label="Top navigation">
+        <a href="#">Home</a>
+        <a href="#">Lessons</a>
+      </nav>
+    </div>
+  </header>
 
-  <p><b>Examples:</b><br>
-  → I believe you.<br>
-  → She has a car.<br>
-  → This cake tastes amazing.<br>
-  → I love learning English.</p>
+  <section class="intro">
+    <h2>Understanding State Verbs</h2>
+    <p><strong>State verbs</strong> describe feelings, thoughts, possession, senses, and existence, not actions.
+      They usually don’t use continuous forms.</p>
 
-  <h3>Part 2 – Common State Verbs</h3>
-  <table>
-    <tr><th>Type</th><th>Verbs</th><th>Example Sentence</th></tr>
-    <tr><td>💭 Thinking / Knowing</td><td>know, believe, understand, think (believe), remember, forget</td><td>I know the answer.</td></tr>
-    <tr><td>💰 Possession</td><td>have, own, belong, include</td><td>This pen belongs to me.</td></tr>
-    <tr><td>❤️ Feelings / Emotions</td><td>like, love, hate, prefer, need, want, wish</td><td>She wants a new phone.</td></tr>
-    <tr><td>👀 Senses</td><td>see, hear, smell, taste, feel</td><td>It smells wonderful.</td></tr>
-    <tr><td>🌈 Appearance / Existence</td><td>be, seem, appear, look (seem), consist</td><td>He seems tired.</td></tr>
-  </table>
-</section>
+    <div class="pill">
+      <button class="pill-toggle" type="button" aria-expanded="false" aria-controls="part2">
+        Lesson – Common State Verbs
+      </button>
 
-<main>
-  <section class="column">
-    <h2>🧠 State (Static) Verbs</h2>
-    <div class="dropzone" id="staticZone">Drop or tap here</div>
+      <div class="pill-content" id="part2">
+        <table>
+          <tr><th>Type</th><th>Verbs</th><th>Example Sentence</th></tr>
+          <tr><td>Thinking / Knowing</td><td>know, believe, understand, think (believe), remember, forget</td><td>I know the answer.</td></tr>
+          <tr><td>Possession</td><td>have, own, belong</td><td>This pen belongs to me.</td></tr>
+          <tr><td>Feelings / Emotions</td><td>like, love, hate, prefer, need, want, wish</td><td>She wants a new phone.</td></tr>
+          <tr><td>Senses</td><td>see, hear, smell, taste, feel</td><td>It smells wonderful.</td></tr>
+          <tr><td>Appearance / Existence</td><td>be, seem, appear, look (seem), consist</td><td>He seems tired.</td></tr>
+        </table>
+      </div>
+    </div>
   </section>
-  <section class="column">
-    <h2>⚡ Dynamic (Action) Verbs</h2>
-    <div class="dropzone" id="dynamicZone">Drop or tap here</div>
+
+  <!-- YOUR GAME HTML (kept) -->
+  <section class="intro">
+    <h2>Choose the correct category</h2>
+    <p>
+      You will see <b>one verb at a time</b>.<br>
+      Tap <b>State</b> or <b>Dynamic</b>.
+    </p>
   </section>
-</main>
 
-<h3 style="text-align:center;">Drag or tap each verb into the correct category 👇</h3>
-<div id="verbs">
-  <div class="verb" draggable="true" data-type="static">know</div>
-  <div class="verb" draggable="true" data-type="dynamic">run</div>
-  <div class="verb" draggable="true" data-type="static">love</div>
-  <div class="verb" draggable="true" data-type="dynamic">jump</div>
-  <div class="verb" draggable="true" data-type="static">believe</div>
-  <div class="verb" draggable="true" data-type="dynamic">write</div>
-  <div class="verb" draggable="true" data-type="static">own</div>
-  <div class="verb" draggable="true" data-type="dynamic">cook</div>
-  <div class="verb" draggable="true" data-type="static">need</div>
-  <div class="verb" draggable="true" data-type="dynamic">swim</div>
-  <div class="verb" draggable="true" data-type="static">belong</div>
-  <div class="verb" draggable="true" data-type="dynamic">talk</div>
-</div>
+  <main>
+    <div class="game-card">
 
-<div class="feedback" id="feedback"></div>
-<button id="checkBtn">✅ Check Answers</button>
-<button id="resetBtn">🔁 Reset Game</button>
+      <div class="targets">
+        <div class="target" id="binState">
+          <div class="target-title">State- describe something that doesn't change</div>
+          <div class="target-mouth"></div>
+        </div>
+        <div class="target" id="binDynamic">
+          <div class="target-title">Dynamic -describe actions</div>
+          <div class="target-mouth"></div>
+        </div>
+      </div>
 
+      <div class="stage">
+        <div class="word" id="wordCard">know</div>
+      </div>
+
+      <div class="controls">
+        <button id="btnState" type="button">STATE</button>
+        <button id="btnDynamic" type="button">DYNAMIC</button>
+      </div>
+
+      <div class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div><span id="current">1</span>/<span id="total">0</span></div>
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <div class="reset">
+        <button id="resetBtn" type="button">Reset</button>
+      </div>
+ 
+    </div>
 <div class="nav-buttons">
-  <a href="https://koalaspiessydney.github.io/ModernEnglishAU/">🏠 Home</a>
+
   <a href="b1stateverbs.pdf" download>⬇️ Download Worksheet (PDF/Word)</a>
 </div>
+    
+  </main>
+     
 
-<footer>© Koala Spies Sydney · Modern English Australia.</footer>
+  <footer class="ks-footer">
 
-<script>
-// ----- Drag and Drop + Tap Logic -----
-const verbs=document.querySelectorAll('.verb');
-const staticZone=document.getElementById('staticZone');
-const dynamicZone=document.getElementById('dynamicZone');
-const feedback=document.getElementById('feedback');
-const checkBtn=document.getElementById('checkBtn');
-const resetBtn=document.getElementById('resetBtn');
-let selected=null;
 
-// drag desktop
-verbs.forEach(v=>{
-  v.addEventListener('dragstart',e=>{
-    e.dataTransfer.setData('text/plain',e.target.dataset.type+'|'+e.target.textContent);
-  });
-});
+    </nav>
+    <div>© Koala Spies Sydney · Modern English Australia</div>
+  </footer>
 
-// drop zones
-[staticZone,dynamicZone].forEach(zone=>{
-  zone.addEventListener('dragover',e=>e.preventDefault());
-  zone.addEventListener('drop',e=>{
-    e.preventDefault();
-    const [type,text]=e.dataTransfer.getData('text/plain').split('|');
-    const el=[...verbs].find(v=>v.textContent===text);
-    zone.appendChild(el);
-  });
-});
+  <script>
+    /* Pill toggle (added; does not touch your game) */
+    const pillBtn = document.querySelector('.pill-toggle');
+    const pillContent = document.querySelector('.pill-content');
+    if (pillBtn && pillContent) {
+      pillBtn.addEventListener('click', () => {
+        const open = pillContent.classList.toggle('open');
+        pillBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
 
-// tap mobile
-verbs.forEach(v=>{
-  v.addEventListener('click',()=>{
-    if(selected===v){v.classList.remove('selected');selected=null;return;}
-    if(selected)selected.classList.remove('selected');
-    selected=v;v.classList.add('selected');
-  });
-});
-[staticZone,dynamicZone].forEach(zone=>{
-  zone.addEventListener('click',()=>{
-    if(selected){zone.appendChild(selected);selected.classList.remove('selected');selected=null;}
-  });
-});
+    /* YOUR GAME JS (kept; only removed emojis from text strings) */
+    const WORDS=[
+      {t:"know",c:"state"},
+      {t:"run",c:"dynamic"},
+      {t:"love",c:"state"},
+      {t:"jump",c:"dynamic"},
+      {t:"believe",c:"state"},
+      {t:"write",c:"dynamic"},
+      {t:"own",c:"state"},
+      {t:"cook",c:"dynamic"},
+      {t:"need",c:"state"},
+      {t:"swim",c:"dynamic"},
+      {t:"belong",c:"state"},
+      {t:"talk",c:"dynamic"}
+    ];
 
-// check
-checkBtn.addEventListener('click',()=>{
-  let score=0,total=verbs.length;
-  document.querySelectorAll('.dropzone').forEach(zone=>{
-    [...zone.children].forEach(v=>{
-      const correct=(zone.id==='staticZone'&&v.dataset.type==='static')||
-                    (zone.id==='dynamicZone'&&v.dataset.type==='dynamic');
-      if(correct)score++;
-    });
-  });
-  feedback.textContent=`You got ${score} out of ${total} correct!`;
-  feedback.style.color=score===total?'green':'#ff7a1a';
-});
+    const wordCard=document.getElementById("wordCard");
+    const btnState=document.getElementById("btnState");
+    const btnDynamic=document.getElementById("btnDynamic");
+    const binState=document.getElementById("binState");
+    const binDynamic=document.getElementById("binDynamic");
+    const scoreEl=document.getElementById("score");
+    const curEl=document.getElementById("current");
+    const totalEl=document.getElementById("total");
+    const feedback=document.getElementById("feedback");
+    const resetBtn=document.getElementById("resetBtn");
 
-// reset
-resetBtn.addEventListener('click',()=>{
-  feedback.textContent='';
-  document.getElementById('verbs').append(...verbs);
-});
-</script>
+    let list=[],i=0,score=0,lock=false;
+
+    function shuffle(a){
+      return a.sort(()=>Math.random()-.5);
+    }
+
+    function show(){
+      wordCard.className="word";
+      wordCard.style.opacity=1;
+      if(i>=list.length){
+        wordCard.textContent="Finished!";
+        btnState.disabled=btnDynamic.disabled=true;
+        feedback.textContent=`Final score: ${score}/${list.length}`;
+        return;
+      }
+      wordCard.textContent=list[i].t;
+      curEl.textContent=i+1;
+    }
+
+    function answer(type){
+      if(lock||i>=list.length)return;
+      lock=true;
+      const correct=list[i].c===type;
+      const bin=type==="state"?binState:binDynamic;
+
+      if(correct){
+        score++;
+        scoreEl.textContent=score;
+        bin.classList.add("glow");
+        wordCard.classList.add(type==="state"?"fly-left":"fly-right");
+        setTimeout(()=>{
+          bin.classList.remove("glow");
+          i++;lock=false;show();
+        },450);
+      }else{
+        feedback.textContent="Try again";
+        bin.classList.add("shake");
+        wordCard.classList.add("shake");
+        setTimeout(()=>{
+          bin.classList.remove("shake");
+          wordCard.classList.remove("shake");
+          lock=false;
+        },300);
+      }
+    }
+
+    btnState.onclick=()=>answer("state");
+    btnDynamic.onclick=()=>answer("dynamic");
+
+    resetBtn.onclick=()=>{
+      list=shuffle([...WORDS]);
+      i=0;score=0;lock=false;
+      scoreEl.textContent=0;
+      feedback.textContent="";
+      btnState.disabled=btnDynamic.disabled=false;
+      show();
+    };
+
+    list=shuffle([...WORDS]);
+    totalEl.textContent=list.length;
+    show();
+  </script>
+
 </body>
 </html>
-
-
-
-
 
